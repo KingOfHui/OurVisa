@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+        <!--android:src="@mipmap/ic_error"-->
+    <ImageView
+        android:layout_width="101dp"
+        android:layout_height="66dp" />
+    <TextView
+        android:text="@string/load_failed"
+        android:textSize="@dimen/T3"
+        android:textColor="@color/gray_87"
+        android:layout_marginTop="26dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:text="@string/load_failed_desc"
+        android:textSize="@dimen/T4"
+        android:gravity="center"
+        android:textColor="@color/black_4A"
+        android:layout_marginTop="4dp"
+        android:layout_width="139dp"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/try_again"
+        android:text="@string/try_again"
+        android:layout_marginTop="45dp"
+        android:textAllCaps="false"
+        android:paddingLeft="22dp"
+        android:paddingRight="22dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/T2"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp" />
+        <!--android:background="@drawable/round_btn_bg_selector"-->
+</LinearLayout>
