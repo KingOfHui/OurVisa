@@ -25,13 +25,15 @@ public class BackTitleHolder extends BaseTitleHolder<BackClickListener> implemen
     TextView title;
     @BindView(R.id.back)
     ImageView back;
+    @BindView(R.id.text_back)
+    TextView textBack;
 
     public boolean backIsFinish = true;
 
     public BackTitleHolder(Context context) {
         super(context, R.layout.title_normal_has_back);
         ButterKnife.bind(this,mTitle);
-        back.setOnClickListener(this);
+        ViewUtil.setOnClickListener(this, back, textBack);
     }
 
     public BackTitleHolder setTitle(CharSequence title){
@@ -46,7 +48,7 @@ public class BackTitleHolder extends BaseTitleHolder<BackClickListener> implemen
 
     @Override
     public void onClick(View v) {
-        if(back == v){
+        if(back == v || textBack == v){
             if(mListener != null)
                 mListener.clickBack();
             if(backIsFinish){

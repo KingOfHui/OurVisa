@@ -17,7 +17,7 @@ public class BaseActivityHelper<TitleHolder extends BaseTitleHolder> implements 
 
     boolean needAnim = true;//是否需要activity进出动画
 
-    public boolean need = true;
+    public boolean need = false;
     private StateManager stateManager;
     private TitleManager<TitleHolder> titleManager;
     public BaseActivityHelper(Activity activity) {

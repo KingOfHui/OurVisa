@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="InstanceEditText" parent="Theme.AppCompat.Light">
+        <item name="android:colorControlNormal">@color/line_colorE8</item>
+        <item name="android:colorControlActivated">@color/blue_0297</item>
+    </style>
+
+    <style name="NoShadowButtonStyle">
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+</resources>

@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.eshel.ourvisa.R;
 import com.eshel.ourvisa.titles.clicklistener.BaseClickListener;
+import com.eshel.ourvisa.util.UIUtil;
 
 /**
  * createBy Eshel
@@ -23,10 +24,10 @@ public abstract class BaseTitleHolder<ClickListener extends BaseClickListener>{
         this.mTitle = mTitle;
         if(mTitle != null) {
             // TODO: 2018/11/2 0002
-            /*View stateBarEmpty = mTitle.findViewById(R.id.state_bar_empty);
+            View stateBarEmpty = mTitle.findViewById(R.id.state_bar_empty);
             if(stateBarEmpty != null){
                 UIUtil.setViewHeight(stateBarEmpty,UIUtil.getStateBarHeight());
-            }*/
+            }
         }
     }
 

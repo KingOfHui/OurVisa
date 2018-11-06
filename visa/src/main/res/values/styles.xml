@@ -13,12 +13,14 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="TranslucentTheme" parent="Theme.AppCompat.Light.NoActionBar" />
+
     <style name="OnboardingTheme" parent="FullscreenTheme">
         <item name="android:windowBackground">@drawable/welcome_bg</item>
     </style>
 
     <style name="TitleStyle">
-        <item name="android:textSize">@dimen/T2</item>
+        <item name="android:textSize">@dimen/T1</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_width">match_parent</item>

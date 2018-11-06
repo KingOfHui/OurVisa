@@ -2,54 +2,39 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="@drawable/title_bg"
+    android:background="@color/colorPrimary"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <View
         android:id="@+id/state_bar_empty"
         android:layout_width="match_parent"
-        android:layout_height="25dp"/>
+        android:layout_height="20dp"/>
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="?android:attr/actionBarSize">
         <TextView
             android:id="@+id/title"
             android:singleLine="true"
+            android:layout_centerInParent="true"
             android:layout_marginLeft="48dp"
             android:layout_marginRight="48dp"
             style="@style/TitleStyle"/>
         <ImageView
-            android:layout_marginLeft="10dp"
+            android:padding="12dp"
             android:id="@+id/back"
             android:layout_centerVertical="true"
-            android:paddingLeft="13dp"
-            android:paddingRight="13dp"
-            android:paddingTop="10dp"
-            android:paddingBottom="10dp"
-            android:src="@mipmap/back"
-            android:layout_width="38dp"
-            android:layout_height="40dp" />
-        <FrameLayout
-            android:visibility="gone"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="13dp"
-            android:padding="3dp"
+            android:src="@drawable/ic_arrow_back"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/right_btn"
-                android:padding="2dp"
-                android:visibility="gone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <ImageView
-                android:id="@+id/new_msg"
-                android:layout_gravity="right|top"
-                android:src="@drawable/circle_red"
-                android:layout_width="5dp"
-                android:layout_height="5dp" />
-        </FrameLayout>
-
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/text_back"
+            android:padding="10dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/back"
+            android:textColor="@color/white"
+            android:textSize="@dimen/T3"
+            android:text="@string/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </RelativeLayout>
 </LinearLayout>
