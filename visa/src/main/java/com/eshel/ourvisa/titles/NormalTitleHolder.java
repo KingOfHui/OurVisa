@@ -11,5 +11,6 @@ public class NormalTitleHolder extends BackTitleHolder{
     public NormalTitleHolder(Context context) {
         super(context);
         back.setVisibility(View.GONE);
+        textBack.setVisibility(View.GONE);
     }
 }

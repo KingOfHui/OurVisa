@@ -20,7 +20,9 @@
             android:layout_marginRight="48dp"
             style="@style/TitleStyle"/>
         <ImageView
-            android:padding="12dp"
+            android:paddingLeft="8dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
             android:id="@+id/back"
             android:layout_centerVertical="true"
             android:src="@drawable/ic_arrow_back"
@@ -28,7 +30,7 @@
             android:layout_height="wrap_content" />
         <TextView
             android:id="@+id/text_back"
-            android:padding="10dp"
+            android:padding="8dp"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/back"
             android:textColor="@color/white"
