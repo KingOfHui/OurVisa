@@ -26,6 +26,7 @@
         </activity>
         <activity android:name=".ui.user.login.LoginActivity" />
         <activity android:name=".ui.user.register.RegisterActivity" />
+        <activity android:name=".ui.user.forgetpsw.ForgetPswActivity" />
     </application>
 
 </manifest>

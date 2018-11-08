@@ -15,10 +15,12 @@ public class GenerateMVPCode {
     private static final String _java = ".java";
 
     public static void main(String args[]){
-        String generateName = "register";
+        String generateName = "forgetpsw";//register
         String path = "ui.user";
         int type = TYPE_ACTIVITY;
         try {
+            if(generateName.equals(""))
+                return;
             generateCode(generateName, path, type);
         } catch (Exception e) {
             e.printStackTrace();

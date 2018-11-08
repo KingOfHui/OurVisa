@@ -13,11 +13,20 @@
     <string name="load_failed_desc">Something went wrong Please try again!</string>
     <string name="try_again">重试</string>
     <string name="login">登录</string>
+    <string name="now_login">立即登录</string>
     <string name="back">返回</string>
     <string name="hint_user_name">请输入用户名称</string>
+    <string name="hint_phone">请输入手机号</string>
     <string name="hint_psw">请输入密码</string>
     <string name="forget_psw">忘记密码</string>
     <string name="auto_login">下次自动登录</string>
     <string name="none_account">------------ 还没有帐号 ------------</string>
-    <string name="sign_up">免费注册</string>
+    <string name="have_account">------------ 已有帐号? ------------</string>
+    <string name="btn_sign_up">免费注册</string>
+    <string name="register">注册</string>
+    <string name="hint_verification">短信验证码</string>
+    <string name="get_verification">获取验证码</string>
+    <string name="agree">同意</string>
+    <string name="confirm_psw">请再次输入密码</string>
+    <string name="btn_submit">提交</string>
 </resources>
