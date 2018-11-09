@@ -29,4 +29,9 @@
     <string name="agree">同意</string>
     <string name="confirm_psw">请再次输入密码</string>
     <string name="btn_submit">提交</string>
+
+    <string name="bottom_home">首页</string>
+    <string name="bottom_my">我的</string>
+    <string name="bottom_discover">发现</string>
+    <string name="bottom_notification">消息</string>
 </resources>

@@ -15,8 +15,8 @@ public class GenerateMVPCode {
     private static final String _java = ".java";
 
     public static void main(String args[]){
-        String generateName = "forgetpsw";//register
-        String path = "ui.user";
+        String generateName = "home";//register
+        String path = "ui";
         int type = TYPE_ACTIVITY;
         try {
             if(generateName.equals(""))

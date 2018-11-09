@@ -7,6 +7,7 @@ import com.eshel.ourvisa.R;
 import com.eshel.ourvisa.mvp.base.MVPActivity;
 import com.eshel.ourvisa.mvp.view.IWelcomeView;
 import com.eshel.ourvisa.titles.DefaultTitleHolder;
+import com.eshel.ourvisa.ui.home.HomeActivity;
 import com.eshel.ourvisa.ui.user.login.LoginActivity;
 
 public class WelcomeActivity extends MVPActivity<DefaultTitleHolder, WelcomePresenter> implements IWelcomeView {
@@ -26,6 +27,7 @@ public class WelcomeActivity extends MVPActivity<DefaultTitleHolder, WelcomePres
     @Override
     public void enterIntoHome() {
         finish();
-        startActivity(LoginActivity.class);
+//        startActivity(LoginActivity.class);
+        startActivity(HomeActivity.class);
     }
 }
