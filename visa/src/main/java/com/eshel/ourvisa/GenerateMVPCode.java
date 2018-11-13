@@ -8,6 +8,7 @@ import java.io.IOException;
 public class GenerateMVPCode {
 
     private static final int TYPE_ACTIVITY = 947;
+    private static final int TYPE_FRAGMENT = 948;
     private static final String JAVA_PATH = "F:\\OurVisa\\visa\\src\\main\\java";
     private static final String PACKAGE = "com.eshel.ourvisa";
     private static final String PACKAGE_PATH = JAVA_PATH + "\\" + PACKAGE.replace(".", "\\") + "\\";
@@ -15,9 +16,9 @@ public class GenerateMVPCode {
     private static final String _java = ".java";
 
     public static void main(String args[]){
-        String generateName = "home";//register
-        String path = "ui";
-        int type = TYPE_ACTIVITY;
+        String generateName = "my";//register
+        String path = "ui.home.fragments";
+        int type = TYPE_FRAGMENT;
         try {
             if(generateName.equals(""))
                 return;
@@ -173,7 +174,39 @@ public class GenerateMVPCode {
             case TYPE_ACTIVITY:
                 createActivityViewImpl(packageF, packageS);
                 break;
+            case TYPE_FRAGMENT:
+                createFragmentViewImpl(packageF, packageS);
+                break;
         }
+    }
+
+    private static void createFragmentViewImpl(File packageF, String packageS) throws IOException {
+        String packageName = packageF.getName();
+
+        String activityName = String.valueOf(packageName.charAt(0)).toUpperCase()+packageName.substring(1, packageName.length()) + "Fragment";
+        File activity = new File(packageF, activityName + _java);
+        checkFile(activity);
+
+        BufferedWriter bw = new BufferedWriter(new FileWriter(activity));
+        writeLine(bw, "package " + PACKAGE + "." + packageS + "." + packageName + ";");
+        writeLine(bw, "import com.eshel.ourvisa.mvp.base.MVPFragment;");
+        writeLine(bw, "import android.os.Bundle;");
+        writeLine(bw, "import android.support.annotation.Nullable;");
+        writeLine(bw, "");
+        writeLine(bw, "import com.eshel.ourvisa.titles.DefaultTitleHolder;");
+        writeLine(bw, "import com.eshel.ourvisa.mvp.view."+getIViewName(packageName)+";");
+        bw.newLine();
+        writeLine(bw, "public class "+activityName+" extends MVPFragment<DefaultTitleHolder, " + getPresenterName(packageName) + "> implements " + getIViewName(packageName) +" {");
+        bw.newLine();
+        writeLine(bw, "    @Override");
+        writeLine(bw, "    public void onCreate(@Nullable Bundle savedInstanceState) {");
+        writeLine(bw, "        super.onCreate(savedInstanceState);");
+        writeLine(bw, "    }");
+        writeLine(bw, "}");
+        writeLine(bw, "");
+
+        bw.flush();
+        bw.close();
     }
 
     private static void createActivityViewImpl(File packageF, String packageS) throws IOException {

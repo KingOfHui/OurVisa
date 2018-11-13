@@ -39,6 +39,10 @@ public class StateManager {
         setState(state);
     }
 
+    public int getState(){
+        return mState;
+    }
+
     /**
      * 改变加载状态同时改变加载状态对应视图
      * @param state
