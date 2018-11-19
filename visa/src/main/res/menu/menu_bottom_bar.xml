@@ -6,13 +6,13 @@
         android:icon="@drawable/ic_home"
         android:title="@string/bottom_home" />
     <item
-        android:id="@+id/action_discover"
-        android:icon="@drawable/ic_explore"
-        android:title="@string/bottom_discover"/>
-    <item
         android:id="@+id/action_notification"
         android:icon="@drawable/ic_notifications"
         android:title="@string/bottom_notification" />
+    <item
+        android:id="@+id/action_shopping_cart"
+        android:icon="@drawable/ic_shopping_cart"
+        android:title="@string/bottom_shopping_cart"/>
     <item
         android:id="@+id/action_my"
         android:icon="@drawable/ic_person"

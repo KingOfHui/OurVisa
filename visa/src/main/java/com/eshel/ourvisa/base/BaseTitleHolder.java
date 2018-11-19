@@ -23,7 +23,6 @@ public abstract class BaseTitleHolder<ClickListener extends BaseClickListener>{
     public BaseTitleHolder(View mTitle) {
         this.mTitle = mTitle;
         if(mTitle != null) {
-            // TODO: 2018/11/2 0002
             View stateBarEmpty = mTitle.findViewById(R.id.state_bar_empty);
             if(stateBarEmpty != null){
                 UIUtil.setViewHeight(stateBarEmpty,UIUtil.getStateBarHeight());

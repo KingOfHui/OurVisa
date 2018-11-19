@@ -1,4 +1,4 @@
-package com.eshel.ourvisa.ui.home.fragments.discover;
+package com.eshel.ourvisa.ui.home.fragments.shopping_cart;
 import com.eshel.ourvisa.base.State;
 import com.eshel.ourvisa.mvp.base.MVPFragment;
 import android.os.Bundle;
@@ -6,11 +6,11 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.eshel.ourvisa.titles.DefaultTitleHolder;
-import com.eshel.ourvisa.mvp.view.IDiscoverView;
+import com.eshel.ourvisa.mvp.view.IShoppingCartView;
 import com.eshel.ourvisa.util.ThreadUtil;
 import com.eshel.ourvisa.util.UIUtil;
 
-public class DiscoverFragment extends MVPFragment<DefaultTitleHolder, DiscoverPresenter> implements IDiscoverView {
+public class ShoppingCartFragment extends MVPFragment<DefaultTitleHolder, ShoppingCartPresenter> implements IShoppingCartView {
 
     boolean frist;
 

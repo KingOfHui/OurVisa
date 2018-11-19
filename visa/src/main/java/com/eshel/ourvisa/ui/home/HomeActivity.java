@@ -5,7 +5,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
@@ -14,10 +13,11 @@ import com.eshel.ourvisa.R;
 import com.eshel.ourvisa.mvp.base.MVPActivity;
 import com.eshel.ourvisa.mvp.view.IHomeView;
 import com.eshel.ourvisa.titles.NormalTitleHolder;
-import com.eshel.ourvisa.ui.home.fragments.discover.DiscoverFragment;
+import com.eshel.ourvisa.ui.home.fragments.shopping_cart.ShoppingCartFragment;
 import com.eshel.ourvisa.ui.home.fragments.my.MyFragment;
 import com.eshel.ourvisa.ui.home.fragments.notification.NotificationFragment;
 import com.eshel.ourvisa.ui.home.fragments.visa.VisaFragment;
+import com.eshel.ourvisa.util.UIUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -51,11 +51,13 @@ public class HomeActivity extends MVPActivity<NormalTitleHolder, HomePresenter> 
         bottomBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                CharSequence title = menuItem.getTitle();
                 switch (menuItem.getItemId()){
                     case R.id.action_home:
+                        title = UIUtil.getString(R.string.dovisa);
                         vpHome.setCurrentItem(POSITION_VISA, false);
                         break;
-                    case R.id.action_discover:
+                    case R.id.action_shopping_cart:
                         vpHome.setCurrentItem(POSITION_DISCOVER, false);
                         break;
                     case R.id.action_notification:
@@ -67,6 +69,7 @@ public class HomeActivity extends MVPActivity<NormalTitleHolder, HomePresenter> 
                         default:
                             return false;
                 }
+                getTitleManager().getTitleHolder().setTitle(title);
                 return true;
             }
         });
@@ -86,7 +89,7 @@ public class HomeActivity extends MVPActivity<NormalTitleHolder, HomePresenter> 
                     fragment = new VisaFragment();
                     break;
                 case POSITION_DISCOVER:
-                    fragment = new DiscoverFragment();
+                    fragment = new ShoppingCartFragment();
                     break;
                 case POSITION_NOTIFICATION:
                     fragment = new NotificationFragment();

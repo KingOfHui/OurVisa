@@ -81,7 +81,7 @@ public class GenerateMVPCode {
         writeLine(bw, "import com.eshel.ourvisa.mvp.base.Modle;");
         writeLine(bw, "import com.eshel.ourvisa.mvp.modles.modlecallback."+getIModleCallbackName(packageName)+";");
         writeLine(bw, "");
-        writeLine(bw, "public class " + modleName + " extends Modle<" + getIModleCallbackName(packageName) + "> {");
+        writeLine(bw, "public class " + modleName + " extends Modle<" + getIModleCallbackName(packageName) + "> implements "+getIModleName(packageName)+"{");
         writeLine(bw, "");
         writeLine(bw, "    public "+modleName+"(" + getIModleCallbackName(packageName) + " callback) {");
         writeLine(bw, "        super(callback);");

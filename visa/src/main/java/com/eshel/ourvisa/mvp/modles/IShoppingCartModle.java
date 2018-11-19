@@ -1,6 +1,6 @@
 package com.eshel.ourvisa.mvp.modles;
 
-public interface IDiscoverModle {
+public interface IShoppingCartModle {
     
 }
 
