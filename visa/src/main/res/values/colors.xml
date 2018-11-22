@@ -8,6 +8,7 @@
     <color name="bgPrimary">#F2F2F2</color>
     <color name="white">#fff</color>
     <!--<color name="white_trans">#49ffffff</color>-->
+    <color name="item_hover">#dbdbdb</color>
 
     <color name="red_e7">#FFE74C3C</color>
     <color name="trans">#00000000</color>
@@ -45,4 +46,6 @@
     <color name="blue_148">#FF148BB5</color>
     <color name="gray_a8">#FFA8A8A8</color>
     <color name="gray_78">#FF787878</color>
+    <color name="transparent">#00000000</color>
+    <color name="white_33">#33ffffff</color>
 </resources>

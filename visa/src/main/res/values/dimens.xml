@@ -2,12 +2,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools"
     >
     <!--T1 一级标题 T2 二级标题 ... 以此类推-->
+
+    <dimen name="T0">25sp</dimen>
     <dimen name="T1">18sp</dimen>
     <dimen name="T2">16sp</dimen>
     <dimen name="T3">14sp</dimen>
     <dimen name="T4">13sp</dimen>
     <dimen name="T5">12sp</dimen>
     <dimen name="T6">11sp</dimen>
+
+    <dimen name="visa_item_padding_vertical">100dp</dimen>
+    <dimen name="visa_item_padding_horizontal">40dp</dimen>
 
     <!--<dimen name="design_bottom_navigation_active_text_size" tools:override="false">@dimen/T3</dimen>-->
     <!--<dimen name="design_bottom_navigation_text_size" tools:override="true">@dimen/T3</dimen>-->

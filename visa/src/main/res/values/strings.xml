@@ -35,4 +35,6 @@
     <string name="bottom_shopping_cart">购物车</string>
     <string name="bottom_notification">消息</string>
     <string name="dovisa">认证申办</string>
+    <string name="visa_foreign_affairs">外交部认证</string>
+    <string name="visa_diplomatic_mission">外交部和使馆认证</string>
 </resources>
