@@ -37,7 +37,7 @@ public class HomeActivity extends MVPActivity<NormalTitleHolder, HomePresenter> 
 
     @Override
     public NormalTitleHolder initTitleHolder() {
-        return new NormalTitleHolder(this).setTitle(R.string.bottom_home);
+        return null;
     }
 
     @Override
@@ -51,10 +51,8 @@ public class HomeActivity extends MVPActivity<NormalTitleHolder, HomePresenter> 
         bottomBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-                CharSequence title = menuItem.getTitle();
                 switch (menuItem.getItemId()){
                     case R.id.action_home:
-                        title = UIUtil.getString(R.string.dovisa);
                         vpHome.setCurrentItem(POSITION_VISA, false);
                         break;
                     case R.id.action_shopping_cart:
@@ -69,7 +67,6 @@ public class HomeActivity extends MVPActivity<NormalTitleHolder, HomePresenter> 
                         default:
                             return false;
                 }
-                getTitleManager().getTitleHolder().setTitle(title);
                 return true;
             }
         });

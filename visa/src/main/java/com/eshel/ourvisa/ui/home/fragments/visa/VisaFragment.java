@@ -11,13 +11,19 @@ import com.eshel.ourvisa.base.State;
 import com.eshel.ourvisa.mvp.base.MVPFragment;
 import com.eshel.ourvisa.mvp.view.IVisaView;
 import com.eshel.ourvisa.titles.DefaultTitleHolder;
+import com.eshel.ourvisa.titles.NormalTitleHolder;
 import com.eshel.ourvisa.util.ThreadUtil;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
 
-public class VisaFragment extends MVPFragment<DefaultTitleHolder, VisaPresenter> implements IVisaView {
+public class VisaFragment extends MVPFragment<NormalTitleHolder, VisaPresenter> implements IVisaView {
+
+    @Override
+    protected NormalTitleHolder initTitleHolder() {
+        return new NormalTitleHolder(getContext()).setTitle(R.string.dovisa);
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -27,7 +33,7 @@ public class VisaFragment extends MVPFragment<DefaultTitleHolder, VisaPresenter>
             public void run() {
                 setState(State.STATE_SUCCESS);
             }
-        }, 150);
+        }, mConfig.getBaseLoadingTime());
     }
 
     @Override

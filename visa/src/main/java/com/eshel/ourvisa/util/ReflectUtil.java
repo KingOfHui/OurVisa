@@ -23,11 +23,12 @@ public class ReflectUtil {
 
 	/**
 	 * 根据泛型获取 Class
-	 * @param clazz 调用地方的 class 对象
+	 * @param clazz 调用地方的 class 对象 ,即泛型持有者
+	 * @param index 泛型顺序
 	 */
 	@SuppressWarnings("unchecked")
-	public static<T> Class<T> getClassByT(Class clazz){
-		Type type = ((ParameterizedType) clazz.getGenericSuperclass()).getActualTypeArguments()[1];
+	public static<T> Class<T> getClassByT(Class clazz, int index){
+		Type type = ((ParameterizedType) clazz.getGenericSuperclass()).getActualTypeArguments()[index];
 		return (Class<T>) type;
 	}
 

@@ -1,22 +1,30 @@
 package com.eshel.ourvisa.mvp.base.factory;
 
 
+import android.os.Build;
+import android.util.ArrayMap;
+
 import com.eshel.ourvisa.mvp.base.Presenter;
 import com.eshel.ourvisa.util.ObjUtil;
 
 import java.lang.reflect.Constructor;
 import java.util.HashMap;
+import java.util.Map;
 
 public class PresenterFactory {
     private static final int capacity = 15;
-    private static HashMap<Class<?extends Presenter>,Presenter> foregroundPresenters;
+    private static Map<Class<?extends Presenter>,Presenter> foregroundPresenters;
 
     public static <P extends Presenter> P getPresenter(Class<P> pClass){
         ObjUtil.checkNull(pClass);
         if(foregroundPresenters == null){
             synchronized (PresenterFactory.class){
                 if(foregroundPresenters == null){
-                    foregroundPresenters = new HashMap<>(capacity);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+                        foregroundPresenters = new ArrayMap<>(capacity);
+                    }else {
+                        foregroundPresenters = new HashMap<>(capacity);
+                    }
                 }
             }
         }

@@ -1,4 +1,5 @@
 package com.eshel.ourvisa.ui.home.fragments.shopping_cart;
+import com.eshel.ourvisa.R;
 import com.eshel.ourvisa.base.State;
 import com.eshel.ourvisa.mvp.base.MVPFragment;
 import android.os.Bundle;
@@ -7,17 +8,20 @@ import android.view.View;
 
 import com.eshel.ourvisa.titles.DefaultTitleHolder;
 import com.eshel.ourvisa.mvp.view.IShoppingCartView;
+import com.eshel.ourvisa.titles.NormalTitleHolder;
 import com.eshel.ourvisa.util.ThreadUtil;
 import com.eshel.ourvisa.util.UIUtil;
 
-public class ShoppingCartFragment extends MVPFragment<DefaultTitleHolder, ShoppingCartPresenter> implements IShoppingCartView {
+public class ShoppingCartFragment extends MVPFragment<NormalTitleHolder, ShoppingCartPresenter> implements IShoppingCartView {
 
-    boolean frist;
+    @Override
+    protected NormalTitleHolder initTitleHolder() {
+        return new NormalTitleHolder(getContext()).setTitle(R.string.bottom_shopping_cart);
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        frist = true;
     }
 
     @Override
@@ -26,19 +30,14 @@ public class ShoppingCartFragment extends MVPFragment<DefaultTitleHolder, Shoppi
     }
 
     @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-        if(isVisibleToUser){
-            if(frist){
-                frist = false;
-                ThreadUtil.postMainDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        setState(State.STATE_SUCCESS);
-                    }
-                }, 150);
+    protected void fristResume() {
+        super.fristResume();
+        ThreadUtil.postMainDelayed(new Runnable() {
+            @Override
+            public void run() {
+                setState(State.STATE_SUCCESS);
             }
-        }
+        }, mConfig.getBaseLoadingTime());
     }
 }
 

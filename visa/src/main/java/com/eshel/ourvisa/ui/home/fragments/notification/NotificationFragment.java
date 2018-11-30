@@ -1,4 +1,5 @@
 package com.eshel.ourvisa.ui.home.fragments.notification;
+import com.eshel.ourvisa.R;
 import com.eshel.ourvisa.base.State;
 import com.eshel.ourvisa.mvp.base.MVPFragment;
 import android.os.Bundle;
@@ -7,16 +8,20 @@ import android.view.View;
 
 import com.eshel.ourvisa.titles.DefaultTitleHolder;
 import com.eshel.ourvisa.mvp.view.INotificationView;
+import com.eshel.ourvisa.titles.NormalTitleHolder;
 import com.eshel.ourvisa.util.ThreadUtil;
 import com.eshel.ourvisa.util.UIUtil;
 
-public class NotificationFragment extends MVPFragment<DefaultTitleHolder, NotificationPresenter> implements INotificationView {
+public class NotificationFragment extends MVPFragment<NormalTitleHolder, NotificationPresenter> implements INotificationView {
 
-    boolean frist;
+    @Override
+    protected NormalTitleHolder initTitleHolder() {
+        return new NormalTitleHolder(getContext()).setTitle(R.string.bottom_notification);
+    }
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        frist = true;
     }
 
     @Override
@@ -25,19 +30,14 @@ public class NotificationFragment extends MVPFragment<DefaultTitleHolder, Notifi
     }
 
     @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-        if(isVisibleToUser){
-            if(frist){
-                frist = false;
-                ThreadUtil.postMainDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        setState(State.STATE_SUCCESS);
-                    }
-                }, 150);
+    protected void fristResume() {
+        super.fristResume();
+        ThreadUtil.postMainDelayed(new Runnable() {
+            @Override
+            public void run() {
+                setState(State.STATE_SUCCESS);
             }
-        }
+        }, mConfig.getBaseLoadingTime());
     }
 }
 

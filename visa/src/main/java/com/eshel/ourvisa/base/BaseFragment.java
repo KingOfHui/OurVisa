@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import com.eshel.ourvisa.R;
 import com.eshel.ourvisa.base.wrap.WrapFragment;
 import com.eshel.ourvisa.util.Log;
+import com.eshel.ourvisa.util.ThreadUtil;
 import com.eshel.ourvisa.util.UIUtil;
 
 public abstract class BaseFragment<TitleHolder extends BaseTitleHolder> extends WrapFragment implements StateViewProvider{
@@ -20,12 +21,14 @@ public abstract class BaseFragment<TitleHolder extends BaseTitleHolder> extends 
 
     private StateManager mStateManager;
     private TitleManager<TitleHolder> mTitleManager;
+    private volatile boolean isFristResume;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mStateManager = new StateManager(this);
         mTitleManager = new TitleManager<>(initTitleHolder(), getActivity(), initTitleMode());
+        isFristResume = true;
     }
 
     protected int initTitleMode() {
@@ -39,6 +42,22 @@ public abstract class BaseFragment<TitleHolder extends BaseTitleHolder> extends 
         mTitleManager.bindToStateManager(mStateManager);
         return ll;
     }
+
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if(isVisibleToUser){
+            if(isFristResume){
+                isFristResume = false;
+                fristResume();
+            }
+        }
+    }
+
+    /**
+     * 第一次resume
+     */
+    protected void fristResume() {}
 
     /**
      * @return null 代表无标题
@@ -58,6 +77,10 @@ public abstract class BaseFragment<TitleHolder extends BaseTitleHolder> extends 
     @Override
     public void onResume() {
         super.onResume();
+        if(isFristResume){
+            isFristResume = false;
+            fristResume();
+        }
     }
 
     public abstract View loadSuccess();

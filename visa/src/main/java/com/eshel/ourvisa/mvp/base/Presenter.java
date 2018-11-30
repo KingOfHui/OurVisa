@@ -1,5 +1,8 @@
 package com.eshel.ourvisa.mvp.base;
 
+import com.eshel.ourvisa.mvp.base.factory.ModleFactory;
+import com.eshel.ourvisa.util.ReflectUtil;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.ParameterizedType;
@@ -23,30 +26,9 @@ public abstract class Presenter<View extends IView, M extends Modle> implements 
 
     private M initModle(){
         //获取泛型 Class
-        Type type = ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[1];
-        Class<M> tClass = (Class<M>)type;
 
-        Type typeModleCallback = ((ParameterizedType) tClass.getGenericSuperclass()).getActualTypeArguments()[0];
-        Class<M> typeModleClass = (Class<M>)typeModleCallback;
-
-        try {
-            Constructor<M> constructor = tClass.getConstructor(typeModleClass);
-            ModleCallback callback = null;
-            if(this instanceof ModleCallback)
-                callback = (ModleCallback) this;
-            return constructor.newInstance(callback);
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (Throwable e){
-            e.printStackTrace();
-        }
-        return null;
+        Class<M> modleClass = ReflectUtil.getClassByT(getClass(), 1);
+        return ModleFactory.createModle(modleClass, this);
     }
 
 //    public abstract ModleCallback getModleCallback();
