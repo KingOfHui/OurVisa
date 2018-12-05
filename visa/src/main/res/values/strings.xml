@@ -37,4 +37,13 @@
     <string name="dovisa">认证申办</string>
     <string name="visa_foreign_affairs">外交部认证</string>
     <string name="visa_diplomatic_mission">外交部和使馆认证</string>
+    <string name="sign_visa">认证</string>
+    <string name="double_visa">双认证</string>
+    <string name="visa_doc">认证须知</string>
+    <string name="help_center">帮助中心</string>
+    <string name="about">关于</string>
+    <string name="self_info">个人信息</string>
+    <string name="location_manage">地址管理</string>
+    <string name="sefety_manage">安全管理</string>
+    <string name="call_ours">联系我们</string>
 </resources>

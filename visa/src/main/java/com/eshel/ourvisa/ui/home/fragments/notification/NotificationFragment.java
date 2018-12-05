@@ -16,7 +16,7 @@ public class NotificationFragment extends MVPFragment<NormalTitleHolder, Notific
 
     @Override
     protected NormalTitleHolder initTitleHolder() {
-        return new NormalTitleHolder(getContext()).setTitle(R.string.bottom_notification);
+        return new NormalTitleHolder(getContext()).setTitle(R.string.bottom_notification).setUseCardView(true);
     }
 
     @Override

@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.eshel.ourvisa.R;
 import com.eshel.ourvisa.titles.clicklistener.BaseClickListener;
+import com.eshel.ourvisa.util.DensityUtil;
 import com.eshel.ourvisa.util.UIUtil;
 
 /**
@@ -14,7 +15,19 @@ import com.eshel.ourvisa.util.UIUtil;
  */
 public abstract class BaseTitleHolder<ClickListener extends BaseClickListener>{
 
+    boolean useCardView;
+    int elevation = DensityUtil.dp2px(3);
     protected View mTitle;
+
+    public<T extends BaseTitleHolder> T setUseCardView(boolean useCardView){
+        this.useCardView = useCardView;
+        return (T) this;
+    }
+
+    public <T extends BaseTitleHolder> T setElevation(int elevation){
+        this.elevation = elevation;
+        return (T) this;
+    }
 
     public BaseTitleHolder(Context context, int layoutId){
         this(View.inflate(context,layoutId,null));

@@ -1,10 +1,11 @@
 package com.eshel.ourvisa.mvp.modles;
 
 import com.eshel.ourvisa.VisaApp;
+import com.eshel.ourvisa.mvp.base.DefaultModleCallback;
 import com.eshel.ourvisa.mvp.base.Modle;
 import com.eshel.ourvisa.mvp.base.ModleCallback;
 
-public class ConfigModle extends Modle {
+public class ConfigModle extends Modle<ModleCallback> {
 
     public ConfigModle(ModleCallback callback) {
         super(callback);

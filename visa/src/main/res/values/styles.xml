@@ -21,7 +21,7 @@
 
     <style name="TitleStyle">
         <item name="android:textSize">@dimen/T1</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/black_03</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">44dp</item>

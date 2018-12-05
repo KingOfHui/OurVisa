@@ -11,7 +11,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/vp_home"
         app:itemTextColor="@color/bottom_bar_color_selector"
-        app:itemBackground="@color/white"
+        app:itemBackground="@color/blue_4375"
         app:itemIconTint="@color/bottom_bar_color_selector"
         app:labelVisibilityMode="labeled"
         app:menu="@menu/menu_bottom_bar"

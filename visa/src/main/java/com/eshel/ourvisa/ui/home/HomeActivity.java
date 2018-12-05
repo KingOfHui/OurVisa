@@ -1,5 +1,7 @@
 package com.eshel.ourvisa.ui.home;
 
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -48,6 +50,7 @@ public class HomeActivity extends MVPActivity<NormalTitleHolder, HomePresenter> 
         mPageAdapter = new HomePageAdapter();
         vpHome.setAdapter(mPageAdapter);
         vpHome.setOffscreenPageLimit(4);
+        bottomBar.setItemIconTintList(ColorStateList.valueOf(Color.WHITE));
         bottomBar.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {

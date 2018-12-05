@@ -16,7 +16,7 @@ public class ShoppingCartFragment extends MVPFragment<NormalTitleHolder, Shoppin
 
     @Override
     protected NormalTitleHolder initTitleHolder() {
-        return new NormalTitleHolder(getContext()).setTitle(R.string.bottom_shopping_cart);
+        return new NormalTitleHolder(getContext()).setTitle(R.string.bottom_shopping_cart).setUseCardView(true);
     }
 
     @Override

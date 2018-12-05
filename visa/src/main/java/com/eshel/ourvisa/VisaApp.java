@@ -24,4 +24,8 @@ public class VisaApp extends BaseApplication{
     public static boolean isDebug(){
         return BuildConfig.DEBUG;
     }
+
+    public ConfigModle getConfig(){
+        return config;
+    }
 }

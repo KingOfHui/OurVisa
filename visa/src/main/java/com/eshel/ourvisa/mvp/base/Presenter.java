@@ -46,4 +46,5 @@ public abstract class Presenter<View extends IView, M extends Modle> implements 
     }
 
     protected abstract void onClose();
+
 }

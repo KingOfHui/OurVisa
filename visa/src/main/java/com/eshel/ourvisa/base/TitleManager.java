@@ -5,12 +5,14 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.support.annotation.IntRange;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 
 import com.eshel.ourvisa.R;
+import com.eshel.ourvisa.util.DensityUtil;
 
 
 /**
@@ -39,9 +41,13 @@ public class TitleManager<TitleHolder extends BaseTitleHolder>{
         this.mTitle = title;
         mRoot = new RelativeLayout(context);
         mRoot.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        if(title != null && title.useCardView) {
+            mTitleLayout = new CardView(context);
+
+            ((CardView)mTitleLayout).setCardElevation(title.elevation);
+        } else
+            mTitleLayout = new FrameLayout(context);
         mContent = new FrameLayout(context);
-        mTitleLayout = new FrameLayout(context);
-//        mTitleLayout.setCardElevation(DensityUtil.dp2px(5));
 //        unUseCardView();
         mTitleLayout.setId(R.id.title_parent_id);
         if(mTitle != null && mTitle.mTitle != null) {

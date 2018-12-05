@@ -8,10 +8,16 @@ import android.view.View;
 
 import com.eshel.ourvisa.titles.DefaultTitleHolder;
 import com.eshel.ourvisa.mvp.view.IMyView;
+import com.eshel.ourvisa.titles.NormalTitleHolder;
 import com.eshel.ourvisa.util.ThreadUtil;
 import com.eshel.ourvisa.util.UIUtil;
 
-public class MyFragment extends MVPFragment<DefaultTitleHolder, MyPresenter> implements IMyView {
+public class MyFragment extends MVPFragment<NormalTitleHolder, MyPresenter> implements IMyView {
+
+    @Override
+    protected NormalTitleHolder initTitleHolder() {
+        return new NormalTitleHolder(getContext()).setTitle(R.string.bottom_my).setUseCardView(true);
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {

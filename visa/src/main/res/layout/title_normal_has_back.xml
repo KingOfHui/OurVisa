@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="@color/colorPrimary"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <View
@@ -24,6 +24,7 @@
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
             android:id="@+id/back"
+            android:tint="@color/black_03"
             android:layout_centerVertical="true"
             android:src="@drawable/ic_arrow_back"
             android:layout_width="wrap_content"
@@ -33,7 +34,7 @@
             android:padding="8dp"
             android:layout_centerVertical="true"
             android:layout_toRightOf="@id/back"
-            android:textColor="@color/white"
+            android:textColor="@color/black_03"
             android:textSize="@dimen/T3"
             android:text="@string/back"
             android:layout_width="wrap_content"
