@@ -46,4 +46,8 @@
     <string name="location_manage">地址管理</string>
     <string name="sefety_manage">安全管理</string>
     <string name="call_ours">联系我们</string>
+    <string name="confim_order">确认订单(%d)</string>
+    <string name="select_all">全选</string>
+    <string name="cancel_select_all">取消全选</string>
+    <string name="show_amount">合计 : %s</string>
 </resources>

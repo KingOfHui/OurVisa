@@ -24,7 +24,7 @@ public class ReflectUtil {
 	/**
 	 * 根据泛型获取 Class
 	 * @param clazz 调用地方的 class 对象 ,即泛型持有者
-	 * @param index 泛型顺序
+	 * @param index 泛型顺序(文件头定义的第几个泛型, 比如: <T, P>, T 对应 0 , P 对应 1)
 	 */
 	@SuppressWarnings("unchecked")
 	public static<T> Class<T> getClassByT(Class clazz, int index){
