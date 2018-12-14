@@ -2,6 +2,7 @@
 <resources>
 
     <color name="blue_4375">#4375FB</color>
+    <color name="bottom_bar_bg">#6891fc</color>
     <color name="colorPrimary">#00B38A</color>
     <color name="colorPrimaryText">#5FB52C</color>
     <color name="colorPrimaryDarkText">#8E8E8E</color>

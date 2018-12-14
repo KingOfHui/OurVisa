@@ -1,15 +1,19 @@
 package com.eshel.ourvisa.ui.home.fragments.visa;
 
+import com.eshel.ourvisa.R;
 import com.eshel.ourvisa.VisaApp;
+import com.eshel.ourvisa.bean.local.VisaCategoryV;
 import com.eshel.ourvisa.mvp.base.Modle;
 import com.eshel.ourvisa.mvp.modles.IVisaModle;
 import com.eshel.ourvisa.mvp.modles.modlecallback.IVisaModleCallback;
 import com.eshel.ourvisa.util.ThreadUtil;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class VisaModle extends Modle<IVisaModleCallback> implements IVisaModle {
 
+    List<VisaCategoryV> categoryDatas;
     public VisaModle(IVisaModleCallback callback) {
         super(callback);
     }
@@ -30,8 +34,25 @@ public class VisaModle extends Modle<IVisaModleCallback> implements IVisaModle {
     }
 
     @Override
-    protected void onClose() {
+    public void loadCategoryData() {
+        if(categoryDatas == null){
+            categoryDatas = new ArrayList<>(8);
+            categoryDatas.add(new VisaCategoryV(VisaCategoryV.ID_SING_VISA, R.drawable.ic_explore, R.string.sign_visa));
+            categoryDatas.add(new VisaCategoryV(VisaCategoryV.ID_DOUBLE_VISA, R.drawable.ic_explore, R.string.double_visa));
+            categoryDatas.add(new VisaCategoryV(VisaCategoryV.ID_DOUBLE_PARTICULARLY_VISA, R.drawable.ic_explore, R.string.double_visa_particularly));
+            categoryDatas.add(new VisaCategoryV(VisaCategoryV.ID_HALF_VISA, R.drawable.ic_explore, R.string.visa_half));
 
+            categoryDatas.add(new VisaCategoryV(VisaCategoryV.ID_VISA_DOC, R.drawable.ic_explore, R.string.visa_doc));
+            categoryDatas.add(new VisaCategoryV(VisaCategoryV.ID_SUCCESS_DEMO, R.drawable.ic_explore, R.string.visa_success_demo));
+            categoryDatas.add(new VisaCategoryV(VisaCategoryV.ID_HELP_CENTER, R.drawable.ic_explore, R.string.help_center));
+            categoryDatas.add(new VisaCategoryV(VisaCategoryV.ID_ABOUT, R.drawable.ic_explore, R.string.about));
+        }
+        mCallback.callbackCategoryData(categoryDatas);
+    }
+
+    @Override
+    protected void onClose() {
+        categoryDatas = null;
     }
 }
 

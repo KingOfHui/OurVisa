@@ -30,7 +30,7 @@
     <string name="confirm_psw">请再次输入密码</string>
     <string name="btn_submit">提交</string>
 
-    <string name="bottom_home">首页</string>
+    <string name="home">首页</string>
     <string name="bottom_my">我的</string>
     <string name="bottom_shopping_cart">购物车</string>
     <string name="bottom_notification">消息</string>
@@ -39,7 +39,10 @@
     <string name="visa_diplomatic_mission">外交部和使馆认证</string>
     <string name="sign_visa">认证</string>
     <string name="double_visa">双认证</string>
+    <string name="double_visa_particularly">双认证加急</string>
+    <string name="visa_half">半价认证</string>
     <string name="visa_doc">认证须知</string>
+    <string name="visa_success_demo">成功案例</string>
     <string name="help_center">帮助中心</string>
     <string name="about">关于</string>
     <string name="self_info">个人信息</string>

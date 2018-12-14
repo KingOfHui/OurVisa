@@ -11,8 +11,15 @@
         app:indicator_height="10dp"
         app:indicator_margin="5dp"
         android:layout_width="match_parent"
-        android:layout_height="230dp"/>
-    <Button
+        android:layout_height="180dp"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_visa_category"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/banner"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <!--<Button
         android:id="@+id/sign_visa"
         android:textColor="@color/white_fafa"
         android:textSize="@dimen/T1"
@@ -76,5 +83,5 @@
         android:layout_margin="10dp"
         android:background="@drawable/shape_btn_bg_blue"
         android:layout_width="0dp"
-        android:layout_height="100dp" />
+        android:layout_height="100dp" />-->
 </android.support.constraint.ConstraintLayout>
