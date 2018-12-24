@@ -26,10 +26,14 @@ public class MD5Utils {
 	}
 
 	public static String encode(String text){
+		return encode(text, "UTF-8");
+	}
+
+	public static String encode(String text, String charsetName){
 		try {
 			MessageDigest md = MessageDigest.getInstance("md5");
 			//加密转换
-			byte[] digest = md.digest(text.getBytes("UTF-8"));
+			byte[] digest = md.digest(text.getBytes(charsetName));
 			StringBuffer sb = new StringBuffer();
 			for (byte b : digest) {
 				int a = b & 0xff;//取低八位, 取正
