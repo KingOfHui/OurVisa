@@ -24,7 +24,7 @@ public abstract class Presenter<View extends IView, M extends Modle> implements 
         mDatas = initModle();
     }
 
-    private M initModle(){
+    protected M initModle(){
         //获取泛型 Class
 
         Class<M> modleClass = ReflectUtil.getClassByT(getClass(), 1);
