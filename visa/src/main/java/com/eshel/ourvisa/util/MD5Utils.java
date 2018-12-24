@@ -1,8 +1,12 @@
 package com.eshel.ourvisa.util;
 
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
@@ -11,11 +15,21 @@ import java.security.NoSuchAlgorithmException;
  */
 
 public class MD5Utils {
+
+	//签名内容 = 3d4d18461ebd93e20f8d73c888b94ee9
+	//验证签名 = true
+	public static void main(String args[]){
+		String text = "age=30&amount=600.2&name=Mike";
+		String key = "123456";
+		text+=key;
+		System.out.println(encode(text));
+	}
+
 	public static String encode(String text){
 		try {
 			MessageDigest md = MessageDigest.getInstance("md5");
 			//加密转换
-			byte[] digest = md.digest(text.getBytes());
+			byte[] digest = md.digest(text.getBytes("UTF-8"));
 			StringBuffer sb = new StringBuffer();
 			for (byte b : digest) {
 				int a = b & 0xff;//取低八位, 取正
@@ -28,6 +42,8 @@ public class MD5Utils {
 			}
 			return sb.toString();
 		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		}
 		return  "00000000000000000000000000000000";
