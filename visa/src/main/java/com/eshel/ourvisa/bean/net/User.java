@@ -3,7 +3,7 @@ package com.eshel.ourvisa.bean.net;
 import com.google.gson.annotations.SerializedName;
 
 public class User extends BaseBean{
-
+    public static final String USER_ID = "userId";
     /**
      * res : http://localhost:7003/enterprise-platform/resource
      * orgName : 所属单位，没有为空

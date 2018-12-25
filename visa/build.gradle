@@ -41,4 +41,6 @@ dependencies {
     api 'com.squareup.retrofit2:retrofit:2.3.0'
     api 'com.squareup.retrofit2:converter-gson:2.1.0'
     implementation 'com.alibaba:fastjson:1.2.54'
+    implementation files('libs/ormlite-android-4.48.jar')
+    implementation files('libs/ormlite-core-4.48.jar')
 }

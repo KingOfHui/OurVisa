@@ -39,10 +39,14 @@ public abstract class Presenter<View extends IView, M extends Modle> implements 
      */
     @Override
     public void close(){
-        if(mDatas != null) mDatas.close();
+        if(mDatas != null && closeModleData()) mDatas.close();
         onClose();
         mDatas = null;
         mView = null;
+    }
+
+    protected boolean closeModleData(){
+        return true;
     }
 
     protected abstract void onClose();

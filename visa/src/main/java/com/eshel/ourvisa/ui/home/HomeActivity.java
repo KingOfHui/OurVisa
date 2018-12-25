@@ -19,6 +19,7 @@ import com.eshel.ourvisa.ui.home.fragments.shopping_cart.ShoppingCartFragment;
 import com.eshel.ourvisa.ui.home.fragments.my.MyFragment;
 import com.eshel.ourvisa.ui.home.fragments.notification.NotificationFragment;
 import com.eshel.ourvisa.ui.home.fragments.visa.VisaFragment;
+import com.eshel.ourvisa.ui.jump.JumpUtil;
 import com.eshel.ourvisa.util.UIUtil;
 
 import butterknife.BindView;
@@ -45,6 +46,7 @@ public class HomeActivity extends MVPActivity<NormalTitleHolder, HomePresenter> 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        JumpUtil.getJump().jumpLogin(this, false);
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
         mPageAdapter = new HomePageAdapter();

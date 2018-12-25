@@ -27,7 +27,12 @@ public class WelcomeActivity extends MVPActivity<DefaultTitleHolder, WelcomePres
     @Override
     public void enterIntoHome() {
         finish();
-//        startActivity(LoginActivity.class);
         startActivity(HomeActivity.class);
+    }
+
+    @Override
+    public void enterIntoLogin() {
+        finish();
+        startActivity(LoginActivity.class);
     }
 }
